@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended:false}))
 
 app.post('/sendMessage', async(req,res)=>{
     var options = {authorization : process.env.API_KEY , message : req.body.message ,  numbers : [req.body.number]} 
-const response =await fast2sms.sendMessage(options) //Asynchronous Function.
+const response =await fast2sms.sendMessage(options) 
     res.send(response);
 })
 
